@@ -1,0 +1,240 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(46, 47, 66, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--transition-dur-and-func),
+    visibility var(--transition-dur-and-func);
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal {
+  position: relative;
+  width: 408px;
+  max-width: 100%;
+  padding: 72px 24px 24px;
+  background-color: var(--dairy);
+  border-radius: 4px;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.14),
+    0 2px 1px rgba(0, 0, 0, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.2);
+  transform: translateY(24px);
+  transition: transform var(--transition-dur-and-func);
+}
+
+.backdrop.is-open .modal {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  color: var(--navy-blue);
+  background-color: var(--cornflower);
+  transition:
+    color var(--transition-dur-and-func),
+    background-color var(--transition-dur-and-func),
+    border-color var(--transition-dur-and-func);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: var(--white);
+  background-color: var(--ocean);
+  border: none;
+}
+
+.modal-close-icon {
+  fill: currentColor;
+}
+
+.modal-title {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--navy-blue);
+}
+
+/* ---------- поля формы в модалке ---------- */
+.form-group {
+  margin-bottom: 8px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--light-slate);
+}
+
+.form-field {
+  position: relative;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--navy-blue);
+  background-color: transparent;
+  outline: none;
+  transition: border-color var(--transition-dur-and-func);
+}
+
+.form-input {
+  height: 40px;
+  padding: 0 16px 0 38px;
+}
+
+.form-input:hover,
+.form-input:focus,
+.form-textarea:hover,
+.form-textarea:focus {
+  border-color: var(--iris);
+}
+
+.form-textarea {
+  display: block;
+  height: 120px;
+  padding: 8px 16px;
+  resize: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+
+/* иконка по центру по вертикали */
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  fill: var(--navy-blue);
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: fill var(--transition-dur-and-func);
+}
+
+.form-input:focus + .form-icon {
+  fill: var(--iris);
+}
+
+/* ---------- кастомный чекбокс ---------- */
+.checkbox {
+  margin-bottom: 24px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--light-slate);
+  cursor: pointer;
+}
+
+.checkbox-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  transition:
+    border-color var(--transition-dur-and-func),
+    background-color var(--transition-dur-and-func);
+}
+
+.checkbox-icon {
+  fill: var(--grey);
+  opacity: 0;
+  transition: opacity var(--transition-dur-and-func);
+}
+
+.checkbox-input:checked + .checkbox-label .checkbox-box {
+  border-color: var(--ocean);
+  background-color: var(--ocean);
+}
+
+.checkbox-input:checked + .checkbox-label .checkbox-icon {
+  opacity: 1;
+}
+
+.checkbox-label:hover .checkbox-box,
+.checkbox-input:focus-visible + .checkbox-label .checkbox-box {
+  border-color: var(--iris);
+}
+
+.checkbox-link {
+  text-decoration: underline;
+  color: var(--iris);
+  transition: color var(--transition-dur-and-func);
+}
+
+.checkbox-link:hover,
+.checkbox-link:focus {
+  color: var(--ocean);
+}
+
+.modal-button {
+  display: block;
+  min-width: 169px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  background-color: var(--iris);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  transition: background-color var(--transition-dur-and-func);
+}
+
+.modal-button:hover,
+.modal-button:focus {
+  background-color: var(--ocean);
+}
