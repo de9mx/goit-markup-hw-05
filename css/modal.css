@@ -84,7 +84,7 @@
   color: var(--navy-blue);
 }
 
-/* ---------- поля формы в модалке ---------- */
+/* modal form fields */
 .form-group {
   margin-bottom: 8px;
 }
@@ -137,6 +137,9 @@
   display: block;
   height: 120px;
   padding: 8px 16px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
   resize: none;
 }
 
@@ -145,7 +148,7 @@
   color: rgba(46, 47, 66, 0.4);
 }
 
-/* иконка по центру по вертикали */
+/* icon is vertically centered inside the input */
 .form-icon {
   position: absolute;
   top: 50%;
@@ -160,7 +163,7 @@
   fill: var(--iris);
 }
 
-/* ---------- кастомный чекбокс ---------- */
+/* custom checkbox */
 .checkbox {
   margin-bottom: 24px;
 }
