@@ -35,10 +35,6 @@
   color: var(--cornflower);
 }
 
-.footer-right {
-  margin-right: 80px;
-}
-
 .footer-social-text {
   margin-bottom: 16px;
   font-weight: 500;
@@ -75,6 +71,10 @@
 }
 
 /* ---------- форма подписки ---------- */
+.footer-subscribe {
+  margin-left: auto;
+}
+
 .subscribe-label {
   display: block;
   margin-bottom: 16px;
@@ -98,7 +98,7 @@
   border-radius: 4px;
   font-family: inherit;
   font-size: 12px;
-  line-height: 2;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: var(--white);
   background-color: transparent;
@@ -112,7 +112,7 @@
 
 .subscribe-input:hover,
 .subscribe-input:focus {
-  border-color: var(--iris);
+  border-color: var(--green);
 }
 
 .subscribe-button {
@@ -136,7 +136,7 @@
 
 .subscribe-button:hover,
 .subscribe-button:focus {
-  background-color: var(--ocean);
+  background-color: var(--green);
 }
 
 .subscribe-icon {
