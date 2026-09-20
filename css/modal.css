@@ -53,7 +53,7 @@
   width: 24px;
   height: 24px;
   padding: 0;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 50%;
   color: var(--navy-blue);
   background-color: var(--cornflower);
@@ -67,7 +67,7 @@
 .modal-close:focus {
   color: var(--white);
   background-color: var(--ocean);
-  border: none;
+  border-color: var(--ocean);
 }
 
 .modal-close-icon {
@@ -89,6 +89,10 @@
   margin-bottom: 8px;
 }
 
+.form-group-comment {
+  margin-bottom: 16px;
+}
+
 .form-label {
   display: block;
   margin-bottom: 4px;
@@ -108,10 +112,10 @@
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   font-family: inherit;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: var(--navy-blue);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--slate);
   background-color: transparent;
   outline: none;
   transition: border-color var(--transition-dur-and-func);
